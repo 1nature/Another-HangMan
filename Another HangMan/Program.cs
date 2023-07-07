@@ -40,8 +40,9 @@
                             ++rightLetterCount;
                         }
                     }
-                    Console.WriteLine($"{userInput}: right guess");
+                    Console.WriteLine($"{userInput} is a right guess");
                     Console.WriteLine(guessedWord);
+                    Console.WriteLine("Number of correctly guessed letters = {0}", rightLetterCount);
                     Console.WriteLine("---------------------\n");
                     if (guessedWord.Length == rightLetterCount)
                     {
@@ -53,7 +54,7 @@
                 else if (!randomWordToGuess.Contains (userInput)) 
                 {
                     --maxTriesLeft;
-                    Console.WriteLine($"{userInput} is a wrong guess; try again. Guesses left: {maxTriesLeft}");
+                    Console.WriteLine($"{userInput} is a wrong guess; try again. Guesses left = {maxTriesLeft}");
 
                     if (maxTriesLeft == 0)
                     {
