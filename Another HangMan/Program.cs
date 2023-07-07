@@ -52,8 +52,8 @@
                 }
                 else if (!randomWordToGuess.Contains (userInput)) 
                 {
-                    Console.WriteLine($"{userInput} is a wrong guess; try again");
                     --maxTriesLeft;
+                    Console.WriteLine($"{userInput} is a wrong guess; try again. Guesses left: {maxTriesLeft}");
 
                     if (maxTriesLeft == 0)
                     {
