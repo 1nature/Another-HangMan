@@ -21,7 +21,6 @@
                 guessedWord[placeholderCount] = PLACEHOLDER;
             }
 
-            Console.WriteLine(randomWordToGuess);
             Console.WriteLine(guessedWord);
             Console.WriteLine();
 
@@ -38,8 +37,7 @@
                         if (userInput == randomWordToGuess[rightGuessCount])
                         {
                             guessedWord[rightGuessCount] = userInput;
-           
-                            Console.WriteLine("Number of correctly guessed letters: {0}", ++rightLetterCount);
+                            ++rightLetterCount;
                         }
                     }
                     Console.WriteLine($"{userInput}: right guess");
@@ -55,8 +53,7 @@
                 else if (!randomWordToGuess.Contains (userInput)) 
                 {
                     Console.WriteLine($"{userInput} is a wrong guess; try again");
-
-                    Console.WriteLine("Number of guesses left: {0}", --maxTriesLeft);
+                    --maxTriesLeft;
 
                     if (maxTriesLeft == 0)
                     {
