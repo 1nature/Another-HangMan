@@ -63,7 +63,7 @@
                     }
                 }
             }
-            Console.WriteLine("End of the game");
+            Console.WriteLine("The end of the game");
         }
     }
 }
