@@ -23,7 +23,6 @@
 
             Console.WriteLine(guessedWord);
             Console.WriteLine();
-
             Console.WriteLine("Please enter a guess: \n");
             while (true)
             {
@@ -44,23 +43,11 @@
                     Console.WriteLine(guessedWord);
                     Console.WriteLine("Number of correctly guessed letters = {0}", rightLetterCount);
                     Console.WriteLine("---------------------\n");
-                    //if (guessedWord.Length == rightLetterCount)
-                    //{
-                    //    Console.WriteLine("You win");
-                    //    Console.WriteLine($"The hidden word is: {randomWordToGuess}");
-                    //    break;
-                    //}
                 }
                 else if (!randomWordToGuess.Contains (userInput)) 
                 {
                     --maxTriesLeft;
                     Console.WriteLine($"{userInput} is a wrong guess; try again. Guesses left = {maxTriesLeft}");
-
-                    //if (maxTriesLeft == 0)
-                    //{
-                    //    Console.WriteLine("You lose");
-                    //    break;
-                    //}
                 }
                 if (guessedWord.Length == rightLetterCount)
                 {
@@ -68,14 +55,13 @@
                     Console.WriteLine($"The hidden word is: {randomWordToGuess}");
                     break;
                 }
-
                 if (maxTriesLeft == 0)
                 {
                     Console.WriteLine("You lose");
                     break;
                 }
             }
-            Console.WriteLine("The end of the game");
+            Console.WriteLine("End of the game");
         }
     }
 }
