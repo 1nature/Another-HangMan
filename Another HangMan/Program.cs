@@ -53,7 +53,7 @@
                 {
                     Console.WriteLine("You win");
                     Console.WriteLine($"The hidden word is: {randomWordToGuess}");
-                    break;
+                    break
                 }
                 if (maxTriesLeft == 0)
                 {
