@@ -36,7 +36,7 @@
                         if (userInput == randomWordToGuess[rightGuessCount])
                         {
                             guessedWord[rightGuessCount] = userInput;
-                            ++rightLetterCount;
+                            ++rightGuessCount;
                         }
                     }
                     Console.WriteLine($"{userInput} is a right guess");
