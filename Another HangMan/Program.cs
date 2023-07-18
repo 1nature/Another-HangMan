@@ -2,10 +2,10 @@
 {
     internal class Program
     {
+        const char PLACEHOLDER = '_';
         static void Main(string[] args)
         {
             Console.WriteLine("HangMan Project\n");
-            const char PLACEHOLDER = '_';
             List<string> wordsToGuess = new List<string> { "employer", "supplier", "manager", "contractor" };
 
             Random random = new Random();
@@ -68,30 +68,7 @@
                     break;
                 }
             }
-            Console.WriteLine("Enter Yes to play again or No to quit");
-            reply = Console.ReadLine();
-
-            if (reply == "Yes")
-            {
-                randomWordToGuess = wordsToGuess[index];
-                guessedWord = new char[randomWordToGuess.Length];
-                maxTriesLeft = randomWordToGuess.Length;
-                Console.WriteLine("\nHere is your new word: ");
-                newWords = new List<string>();
-
-            }
-
-            else
-            {
-                Console.Write("End of game");
-                
-            }
-
-            //Console.WriteLine("End of The Game");
-            //add a loop to check if the user wants to play again
-            //if they answer yes, it starts from the beginning
-            //if they answer no, it ends
-            //use break
+            Console.WriteLine("End of The Game");
         }
     }
 }
