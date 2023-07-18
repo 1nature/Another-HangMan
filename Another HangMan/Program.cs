@@ -9,8 +9,8 @@
             List<string> wordsToGuess = new List<string> { "employer", "supplier", "manager", "contractor" };
 
             Random random = new Random();
-            int index = random.Next(wordsToGuess.Count);
-            String randomWordToGuess = wordsToGuess[index];
+            int randomNumber = random.Next(wordsToGuess.Count);
+            String randomWordToGuess = wordsToGuess[randomNumber];
             char[] guessedWord = new char[randomWordToGuess.Length];
 
 
