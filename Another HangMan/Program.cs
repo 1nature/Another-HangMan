@@ -13,17 +13,22 @@
             String randomWordToGuess = wordsToGuess[index];
             char[] guessedWord = new char[randomWordToGuess.Length];
 
+
             int rightLetterCount = 0;
             int maxTriesLeft = randomWordToGuess.Length;
+            string reply;
+            List<string> newWords = new List<string>();
 
             for (int placeholderCount = 0; placeholderCount < guessedWord.Length; placeholderCount++)
             {
                 guessedWord[placeholderCount] = PLACEHOLDER;
             }
 
+            Console.WriteLine(randomWordToGuess); //for checking purpose
             Console.WriteLine(guessedWord);
             Console.WriteLine();
             Console.WriteLine("Please enter a guess: \n");
+
             while (true)
             {
                 char userInput = char.Parse(Console.ReadLine());
@@ -36,7 +41,7 @@
                         if (userInput == randomWordToGuess[rightGuessCount])
                         {
                             guessedWord[rightGuessCount] = userInput;
-                            ++rightGuessCount;
+                            ++rightLetterCount;
                         }
                     }
                     Console.WriteLine($"{userInput} is a right guess");
@@ -44,24 +49,49 @@
                     Console.WriteLine("Number of correctly guessed letters = {0}", rightLetterCount);
                     Console.WriteLine("---------------------\n");
                 }
-                else if (!randomWordToGuess.Contains (userInput)) 
+                else if (!randomWordToGuess.Contains(userInput))
                 {
                     --maxTriesLeft;
                     Console.WriteLine($"{userInput} is a wrong guess; try again. Guesses left = {maxTriesLeft}");
                 }
+
                 if (guessedWord.Length == rightLetterCount)
                 {
-                    Console.WriteLine("You win");
+                    Console.WriteLine("You won");
                     Console.WriteLine($"The hidden word is: {randomWordToGuess}");
-                    break
+                    break;
                 }
-                if (maxTriesLeft == 0)
+
+                else if (maxTriesLeft == 0)
                 {
                     Console.WriteLine("You lose");
                     break;
                 }
             }
-            Console.WriteLine("End of The Game");
+            Console.WriteLine("Enter Yes to play again or No to quit");
+            reply = Console.ReadLine();
+
+            if (reply == "Yes")
+            {
+                randomWordToGuess = wordsToGuess[index];
+                guessedWord = new char[randomWordToGuess.Length];
+                maxTriesLeft = randomWordToGuess.Length;
+                Console.WriteLine("\nHere is your new word: ");
+                newWords = new List<string>();
+
+            }
+
+            else
+            {
+                Console.Write("End of game");
+                
+            }
+
+            //Console.WriteLine("End of The Game");
+            //add a loop to check if the user wants to play again
+            //if they answer yes, it starts from the beginning
+            //if they answer no, it ends
+            //use break
         }
     }
 }
